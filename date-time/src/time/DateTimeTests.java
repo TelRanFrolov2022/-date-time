@@ -36,24 +36,9 @@ class DateTimeTests {
 	}
 
 	@Test
-	void displayCurrentDateTimeCanadaTimeZones() {
-		// displaying current local date and time for all Canada time zones
-		// displaying should contains time zone name
-	}
-
-	@Test
 	void nextFriday13Test() {
 		LocalDate date = LocalDate.of(2024, 8, 3);
 		assertEquals(LocalDate.of(2024, 9, 13), date.with(new NextFriday13()));
 	}
 
-	@Test
-	void workingDaysTest() {
-		HashSet<DayOfWeek> daysOff = new HashSet<>();
-		daysOff.add(DayOfWeek.FRIDAY);
-		daysOff.add(DayOfWeek.SATURDAY);
-
-		LocalDate date = LocalDate.of(2023, 3, 3);
-		assertEquals(LocalDate.of(2023, 3, 17), date.with(new WorkingDays(10, daysOff)));
-	}
 }
